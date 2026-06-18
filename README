@@ -1,0 +1,27 @@
+# Projeto de Simulação Verilog
+
+Este projeto está organizado para manter os arquivos fonte, resultados de simulação e binários de compilação separados e organizados.
+
+## Estrutura de Pastas
+
+Abaixo está a representação visual da hierarquia do projeto considerando um exemplo de um projeto de um inversor lógico:
+
+
+projeto/
+├── Makefile            # Script de automação da compilação e simulação
+├── README.md           # Documentação do projeto
+├── setup_project.tcl   # Arquivo de configuração de projetos Quartus Prime
+├── src/                # Código-fonte (Input)
+│   ├── inversor.v      # Módulo principal
+│   └── inversor_tb.v   # Testbench
+├── sim/                # Resultados de Simulação (Output)
+│   └── inversor_tb.vcd # Formas de onda para o GTKWave
+└── .outputs/           # Binários Temporários (Hidden)
+    └── simulacao.vvp   # Arquivo compilado pelo Icarus Verilog
+    
+    
+# Fluxo de projeto com o quartus
+1. A pasta do projeto deve ter o mesmo nome do arquivo.v.
+2. O nome do módulo dentro do arquivo.v deve ser igual ao nome do arquivo.
+3. O arquivo setup_project.tcl deve ser configurado para realizar a pinagem da placa. Os pinos estão todos comentados e com os nomes padronizados do manual. Caso usem outros nomes de pinos, basta alterar.
+4. Apos rodar o comando make project, seram criados os arquivos de projeto projeto.qpf, projeto.qsf, e as pastas db, incremental_db e output_files na pasta raiz.
