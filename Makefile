@@ -1,6 +1,6 @@
 SHELL := /bin/sh
 # --- Variáveis de Projeto ---
-PROJECT_NAME = detector
+PROJECT_NAME = codificador #nome do módulo a ser executado
 TCL_SCRIPT   = novo_setup_project.tcl
 SRC_DIR      = src
 SIM_DIR      = sim

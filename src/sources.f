@@ -1,1 +1,1 @@
-src/detector.v
+src/codificador.v
