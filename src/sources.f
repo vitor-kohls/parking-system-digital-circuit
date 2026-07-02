@@ -1,2 +1,1 @@
-src/codificador.v
-src/vaga.v
+src/mux22a.v

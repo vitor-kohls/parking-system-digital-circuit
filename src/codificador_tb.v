@@ -9,7 +9,7 @@ initial begin
 end   
 
 
-codificador codificador1 (E, S);
+codificador uut (E, S);
 
 //Tabela Verdade
 initial begin

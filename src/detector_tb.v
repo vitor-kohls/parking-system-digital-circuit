@@ -9,7 +9,7 @@ initial begin
 end   
 
 
-detector detector1 (E, S);
+detector uut (E, S);
 
 //Tabela Verdade
 initial begin
