@@ -1,6 +1,6 @@
 module motorista (
-    input [3:0] E,
-    input [3:0] D,
+    input [3:0] VE,
+    input [3:0] VD,
     input P,
     output [3:0] Q,
     output [1:0]V,
@@ -11,20 +11,21 @@ module motorista (
 // Bloco responsável pela saída Q - quantidade de vagas
 
 wire [2:0] s_codE, s_codD;
-codificador codificador_E (
-    .E(E),
+
+codificador codificador_VE (
+    .E(VE),
     .S(s_codE)
 );
 
-codificador codificador_D (
-    .E(D),
+codificador codificador_VD (
+    .E(VD),
     .S(s_codD)
 );
 
 somador_3b somador (
     .a(s_codE),
     .b(s_codD),
-    .ci(0),
+    .ci(0), // Carry in vazio
     .s(Q[2:0]),
     .co(Q[3])
 );
@@ -50,7 +51,6 @@ mux22a mux (
     .E(s_vagE),
     .S(B),
     .Y(V)
-
 );
 
 
