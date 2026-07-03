@@ -1,16 +1,13 @@
-codificador_tb.v
 vaga_tb.v
 codificador.v
 topo.v
 teste.py
-detector_tb.v
 motorista.v
 vaga.v
 detector.v
 sources.f
 somador_1b.v
 somador_3b.v
-mux22a_tb.v
 bcd_para_7seg.v
 mux22a.v
 seletor.v
