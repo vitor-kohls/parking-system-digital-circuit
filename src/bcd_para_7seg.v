@@ -1,6 +1,16 @@
-module bcd_para_7seg (input a, input b, input c, input d,
-output G, output F, output E, output D,
-output C, output B, output A);
+module bcd_para_7seg (
+    input a, 
+    input b, 
+    input c, 
+    input d,
+    output G, 
+    output F, 
+    output E, 
+    output D,
+    output C, 
+    output B, 
+    output A
+);
 
 assign G = (~a & ~b & ~c)|(b & c & d);
 assign F = (~a & ~b & d)|(~b & c)|(c & d);
