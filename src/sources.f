@@ -1,13 +1,1 @@
-vaga_tb.v
-codificador.v
-topo.v
-teste.py
-motorista.v
-vaga.v
-detector.v
-sources.f
-somador_1b.v
-somador_3b.v
-bcd_para_7seg.v
-mux22a.v
-seletor.v
+src/vaga.v

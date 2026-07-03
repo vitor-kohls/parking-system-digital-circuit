@@ -1,6 +1,6 @@
 SHELL := /bin/sh
 # --- Variáveis de Projeto ---
-PROJECT_NAME = mux22a #nome do módulo a ser executado
+PROJECT_NAME = vaga #nome do módulo a ser executado
 TCL_SCRIPT   = novo_setup_project.tcl
 SRC_DIR      = src
 SIM_DIR      = sim
@@ -16,12 +16,13 @@ TB_MODULE    = $(strip $(PROJECT_NAME))_tb
 # --- Binários ---
 # O CURDIR captura o caminho absoluto da pasta atual
 PWD          = $(CURDIR)
-QUARTUS_SH   = quartus_sh
-QUARTUS_MAP  = quartus_map
-QUARTUS_FIT  = quartus_fit
-QUARTUS_ASM  = quartus_asm
-QUARTUS_STA  = quartus_sta
-QUARTUS_PGM  = quartus_pgm
+# Caminhos para rodar no laboratório do computador, mudar se rodar localmente
+QUARTUS_SH   = /apps/altera/18.1/quartus/bin/quartus_sh
+QUARTUS_MAP  = /apps/altera/18.1/quartus/bin/quartus_map
+QUARTUS_FIT  = /apps/altera/18.1/quartus/bin/quartus_fit
+QUARTUS_ASM  = /apps/altera/18.1/quartus/bin/quartus_asm
+QUARTUS_STA  = /apps/altera/18.1/quartus/bin/quartus_sta
+QUARTUS_PGM  = /apps/altera/18.1/quartus/bin/quartus_pgm
 
 .DEFAULT_GOAL := help
 

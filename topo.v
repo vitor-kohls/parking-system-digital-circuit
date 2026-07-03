@@ -6,11 +6,13 @@ module topo(
     output [6:0]hex0
 );
 
-wire q_seg[3:0], v_seg[1:0], b_seg;
+wire [3:0]q_seg;
+wire [1:0]v_seg;
+wire b_seg;
 
 
 // Leds
-assign led = sw[7:0]
+assign led = sw[7:0];
 
 // Processamento dos Sinais de Entrada
 motorista motorista1(
@@ -29,13 +31,13 @@ bcd_para_7seg decod2(
     .b(q_seg[2]),
     .c(q_seg[1]),
     .d(q_seg[0]),
-    .G(hex0[6]),
-    .F(hex0[5]),
-    .E(hex0[4]),
-    .D(hex0[3]),
-    .C(hex0[2]),
-    .B(hex0[1]),
-    .A(hex0[0])
+    .G(hex2[6]),
+    .F(hex2[5]),
+    .E(hex2[4]),
+    .D(hex2[3]),
+    .C(hex2[2]),
+    .B(hex2[1]),
+    .A(hex2[0])
 );
 
 bcd_para_7seg decod1(
@@ -57,13 +59,13 @@ bcd_para_7seg decod0(
     .b(1'b0),
     .c(1'b0),
     .d(b_seg),
-    .G(hex2[6]),
-    .F(hex2[5]),
-    .E(hex2[4]),
-    .D(hex2[3]),
-    .C(hex2[2]),
-    .B(hex2[1]),
-    .A(hex2[0])
+    .G(hex0[6]),
+    .F(hex0[5]),
+    .E(hex0[4]),
+    .D(hex0[3]),
+    .C(hex0[2]),
+    .B(hex0[1]),
+    .A(hex0[0])
 );
 
 endmodule

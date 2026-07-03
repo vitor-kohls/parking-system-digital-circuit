@@ -33,7 +33,8 @@ somador_3b somador (
 
 // Bloco responsável pela saída  V - número da vaga
 
-wire [1:0] s_vagD, s_vag;
+wire [1:0] s_vagD;
+wire [1:0] s_vagE;
 
 vaga seletor_vagaD (
     .E(D),
@@ -56,7 +57,7 @@ mux22a mux (
 
 // Bloco responsável pelo bloco B - Direita ou Esquerda
 
-wire s_deteD, s_deteE;
+wire s_deteD, s_deteE, s_seletor;
 
 detector detector_D (
     .E(D),
@@ -72,7 +73,9 @@ seletor seletor_bloco (
     .E(s_deteE),
     .D(s_deteD),
     .P(P),
-    .S(B)
+    .S(s_seletor)
 );
+
+assign B = s_seletor
 
 endmodule
