@@ -1,6 +1,6 @@
 SHELL := /bin/sh
 # --- Variáveis de Projeto ---
-PROJECT_NAME = vaga #nome do módulo a ser executado
+PROJECT_NAME = topo #nome do módulo a ser executado
 TCL_SCRIPT   = novo_setup_project.tcl
 SRC_DIR      = src
 SIM_DIR      = sim

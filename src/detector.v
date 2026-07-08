@@ -4,6 +4,6 @@ module detector (
     );
 
 
-nand (S, E[3], E[2], E[1], E[0]);
+nand nand1 (S, E[3], E[2], E[1], E[0]);
 
 endmodule

@@ -3,14 +3,15 @@ module motorista (
     input [3:0] VD,
     input P,
     output [3:0] Q,
-    output [1:0]V,
+    output [1:0] V,
     output B
 );
 
 
 // Bloco responsável pela saída Q - quantidade de vagas
 
-wire [2:0] s_codE, s_codD;
+wire [2:0] s_codE;
+wire [2:0] s_codD;
 
 codificador codificador_VE (
     .E(VE),
@@ -31,41 +32,21 @@ somador_3b somador (
 );
 
 
-// Bloco responsável pela saída  V - número da vaga
-
-wire [1:0] s_vagD;
-wire [1:0] s_vagE;
-
-vaga seletor_vagaD (
-    .E(D),
-    .S(s_vagD)
-);
-
-
-vaga seletor_vagaE (
-    .E(E),
-    .S(s_vagE)
-);
-
-mux22a mux (
-    .D(s_vagD),
-    .E(s_vagE),
-    .S(B),
-    .Y(V)
-);
-
 
 // Bloco responsável pelo bloco B - Direita ou Esquerda
 
-wire s_deteD, s_deteE, s_seletor;
+wire s_seletor;
+wire s_deteD;
+wire s_deteE;
+
 
 detector detector_D (
-    .E(D),
+    .E(VD),
     .S(s_deteD)
 );
 
 detector detector_E (
-    .E(E),
+    .E(VE),
     .S(s_deteE)
 );
 
@@ -76,6 +57,30 @@ seletor seletor_bloco (
     .S(s_seletor)
 );
 
-assign B = s_seletor
+assign B = s_seletor;
+
+// Bloco responsável pela saída  V - número da vaga
+
+wire [1:0] s_vagD;
+wire [1:0] s_vagE;
+
+vaga seletor_vagaD (
+    .E(VD),
+    .S(s_vagD)
+);
+
+
+vaga seletor_vagaE (
+    .E(VE),
+    .S(s_vagE)
+);
+
+mux22a mux (
+    .D(s_vagD),
+    .E(s_vagE),
+    .S(s_seletor),
+    .Y(V)
+);
+
 
 endmodule
